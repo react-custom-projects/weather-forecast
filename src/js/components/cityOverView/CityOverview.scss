@@ -1,0 +1,71 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 25px;
+  margin: 15px auto;
+  width: 100%;
+  max-width: 384px;
+  height: 26rem;
+  flex-grow: 1;
+  padding: 0.5rem;
+  position: relative;
+  box-shadow: 3px 3px 20px rgba(0,0,0,0.7);
+  text-shadow: #000 1px 0 25px;
+  background-size: cover;
+
+  &::after {
+    content: "";
+    border-radius: 25px;
+    background: var(--background);
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(90%);
+    opacity: 0.92;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  i, .icon {
+    margin-left: 15px;
+    margin-bottom: 0;
+  }
+
+  .day {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 2rem;
+    margin-left: 15px;
+  }
+
+  .date {
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: 15px;
+  }
+
+  .location {
+    margin-top: 15px;
+    margin-left: 5px;
+    font-size: 22px;
+  }
+
+  .temp {
+    margin-left: 15px;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+}

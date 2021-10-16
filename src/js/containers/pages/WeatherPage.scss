@@ -1,0 +1,13 @@
+//variables
+@import "../../../scss/generic/variables";
+
+.see-more {
+  text-decoration: underline;
+  color: $blue;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    color: darken($blue, 5%);
+  }
+}
