@@ -15,7 +15,7 @@
 - 2 environments {production: .env, development: .env.development}
 
 ## Prerequisites:
-- nodeJS > 12.X.X or Docker
+- nodeJS > 14.X.X or Docker
 
 ## Installing / Getting Started:
 ### Development (locally):
