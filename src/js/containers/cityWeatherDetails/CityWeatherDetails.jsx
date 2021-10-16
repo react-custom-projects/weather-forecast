@@ -5,7 +5,7 @@ import styles from './CityWeatherDetails.scss';
 //selectors
 import { getAppCityData } from '../../store/app/selectors/AppSelectors';
 //components
-import DayWeather from '../dayWeather/DayWeather';
+import DayWeather from '../../components/dayWeather/DayWeather';
 
 const CityWeatherDetails = () => {
 	const cityData = useSelector((state) => getAppCityData({ state })),

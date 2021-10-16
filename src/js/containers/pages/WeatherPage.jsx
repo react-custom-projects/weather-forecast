@@ -11,7 +11,7 @@ import useBoolean from '../../customHooks/UseBoolean';
 //constants
 import { history } from '../../constants/Constants';
 //components
-import CityWeatherDetails from '../../components/cityWeatherDetails/CityWeatherDetails';
+import CityWeatherDetails from '../cityWeatherDetails/CityWeatherDetails';
 import CityOverview from '../../components/cityOverView/CityOverview';
 import LoadingIcon from '../../components/shared/loadingIcon/LoadingIcon';
 
