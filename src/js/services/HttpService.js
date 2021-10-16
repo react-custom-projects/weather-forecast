@@ -7,7 +7,7 @@ const createNewBaseUrl = (url) =>
 		baseURL: url,
 	});
 
-const apiService = createNewBaseUrl(process.env.API_URL);
+const apiService = createNewBaseUrl(process.env.BASE_URL);
 
 const requestInterceptor = (config) => {
 	return config;
