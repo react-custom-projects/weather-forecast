@@ -19,7 +19,7 @@ const CityWeatherDetails = () => {
 
 	return (
 		<div className={styles.wrapper}>
-			<p>
+			<p className={styles.day}>
 				{todayData.weekDay} {todayData.todayDate}
 			</p>
 			<table className={styles.weatherData} cellPadding="4">

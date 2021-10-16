@@ -1,13 +1,16 @@
 @import "../../../scss/generic/variables";
 
 .day {
-  padding: 0.2rem;
+  padding: 0.3rem;
   border-radius: 1rem;
-  padding-top: 1rem;
   flex-direction: column;
   text-align: center;
   background-color: $grey;
   transition: background-color 300ms ease;
+
+  &:not(:last-of-type) {
+    margin-right: .5rem;
+  }
 
   &.active, &:hover {
     background-color: $smoked-white;
@@ -24,10 +27,5 @@
     .icon {
       filter: invert(1);
     }
-  }
-
-  .icon {
-    margin-left: 15px;
-    margin-bottom: 0;
   }
 }

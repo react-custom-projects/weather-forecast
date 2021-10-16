@@ -19,7 +19,7 @@ const CityOverview = () => {
 		>
 			<div>
 				<h2 className={styles.day}>{cityData?.cityOverview?.weekDay ?? ''}</h2>
-				<div className={styles.date}>{cityData?.cityOverview?.todayDate ?? ''}</div>
+				<span>{cityData?.cityOverview?.todayDate ?? ''}</span>
 				<div className={styles.location}>
 					<i className="fas fa-map-marker-alt" />
 					<span>{cityData?.cityOverview?.name ?? ''}</span>
