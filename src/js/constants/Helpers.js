@@ -21,3 +21,16 @@ export const constructDayWeatherData = (daydata) => {
 		wind: Math.round(Number(daydata.wind.speed) * 3.6 * 100) / 100,
 	};
 };
+
+export const convertQueryStringIntoObject = (query) => {
+	const criteria = query.split('$');
+	return criteria.reduce((acc, el, i) => {
+		const [key, val] = el.split('=');
+		let criteriaKey = key;
+		if (i === 0) {
+			criteriaKey = key.substr(1);
+		}
+
+		return { ...acc, [criteriaKey]: val };
+	}, {});
+};

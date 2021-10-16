@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { hot } from 'react-hot-loader/root';
+import { Route, Switch } from 'react-router-dom';
 //toast
 import { ToastContainer } from 'react-toastify';
 //error boundary
@@ -25,7 +26,10 @@ const App = () => (
 				</div>
 			}
 		>
-			<WeatherPage />
+			<Switch>
+				<Route path="/" render={(propRouter) => <WeatherPage {...propRouter} />} exact />
+				<Route path="*" render={(propsRouter) => <div>Page not found</div>} />
+			</Switch>
 		</Suspense>
 		<ToastContainer />
 	</ErrorBoundary>

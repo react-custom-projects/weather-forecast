@@ -15,12 +15,10 @@ const setIsFetchingCityDataTrue = () => ({ type: SET_IS_FETCHING_CITY_DATA_TRUE 
 
 const setIsFetchingCityDataFalse = () => ({ type: SET_IS_FETCHING_CITY_DATA_FALSE });
 
-export const setCurrentCityWeatherData = () => async (dispatch, getState) => {
-	const state = getState();
-
+export const setCurrentCityWeatherData = (city) => async (dispatch) => {
 	dispatch(setIsFetchingCityDataTrue());
 	try {
-		const res = await WeatherService.fetchCityWeather('paris'),
+		const res = await WeatherService.fetchCityWeather(city),
 			data = res.data,
 			day1Data = data.list[0],
 			day1Weather = day1Data.weather[0],

@@ -12,7 +12,9 @@ const CityOverview = () => {
 		<div
 			className={styles.wrapper}
 			style={{
-				'--background': `url('https://source.unsplash.com/1600x900/?${status}')`,
+				'--background': `url('https://source.unsplash.com/1600x900/?${
+					cityData?.cityOverview?.status ?? ''
+				}')`,
 			}}
 		>
 			<div>
