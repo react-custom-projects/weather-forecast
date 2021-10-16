@@ -9,6 +9,8 @@ import { ErrorBoundary } from 'react-error-boundary';
 import ErrorBoundaryFallback from './js/generic/ErrorBoundaryFallback';
 //components
 import LoadingIcon from './js/components/shared/loadingIcon/LoadingIcon';
+//containers
+import NotFoundPage from './js/containers/pages/notFoundPage/NotFoundPage';
 const WeatherPage = lazy(() => import('./js/containers/pages/weatherPage/WeatherPage'));
 
 const App = () => (
@@ -27,8 +29,8 @@ const App = () => (
 			}
 		>
 			<Switch>
-				<Route path="/" render={(propRouter) => <WeatherPage {...propRouter} />} exact />
-				<Route path="*" render={(propsRouter) => <div>Page not found</div>} />
+				<Route path="/" render={(routerProps) => <WeatherPage {...routerProps} />} exact />
+				<Route path="*" render={(routerProps) => <NotFoundPage {...routerProps} />} />
 			</Switch>
 		</Suspense>
 		<ToastContainer />
