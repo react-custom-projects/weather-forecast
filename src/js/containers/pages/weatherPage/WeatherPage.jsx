@@ -43,7 +43,7 @@ const WeatherPage = ({
 			<SearchInput />
 			{isFetching && <LoadingIcon />}
 			{!isFetching && isEmpty(cityData) && <span>No data found. Try using the search.</span>}
-			{!isEmpty(cityData) && (
+			{!isEmpty(cityData) && !isFetching && (
 				<>
 					{isDetails ? <CityWeatherDetails /> : <CityOverview />}
 					<span className={styles.seeMore} onClick={setIsDetails.toggle}>

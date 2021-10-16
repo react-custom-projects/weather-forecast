@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 import styles from './SearchInput.scss';
 //constants
 import { history } from '../../constants/Constants';
+import { useSelector } from 'react-redux';
+import { getAppIsFetching } from '../../store/app/selectors/AppSelectors';
 
 const SearchInput = () => {
-	const [value, setValue] = useState('');
+	const [value, setValue] = useState(''),
+		isFetching = useSelector((state) => getAppIsFetching({ state }));
 
 	const searchHandler = ({ target: { value } }) => {
 		setValue(value);
@@ -29,8 +32,9 @@ const SearchInput = () => {
 				type="text"
 				className={styles.input}
 				placeholder="Search"
+				disabled={isFetching}
 			/>
-			<button type="submit" className={styles.iconWrapper}>
+			<button disabled={isFetching} type="submit" className={styles.iconWrapper}>
 				<i className="fas fa-search" />
 			</button>
 		</form>
