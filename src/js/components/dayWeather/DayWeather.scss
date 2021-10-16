@@ -1,0 +1,25 @@
+.day {
+  padding: 0.2rem;
+  border-radius: 1rem;
+  padding-top: 1rem;
+  flex-direction: column;
+  text-align: center;
+  background-color: #303445;
+  transition: background-color 300ms ease;
+
+  &:hover {
+    background-color: whitesmoke;
+    color: #303445;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    .icon {
+      filter: invert(1);
+    }
+  }
+
+  .icon {
+    margin-left: 15px;
+    margin-bottom: 0;
+  }
+}

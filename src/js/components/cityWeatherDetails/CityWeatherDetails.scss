@@ -1,0 +1,56 @@
+.wrapper {
+  border-radius: 25px;
+  width: 24rem;
+  height: 26rem;
+  flex-grow: 1;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 3px 3px 20px rgba(0,0,0,0.7);
+
+  &::after {
+    content:"";
+    border-radius: 25px;
+    background-color: #252836;
+    opacity: 0.92;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .weather-data {
+    margin: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    tr {
+      td {
+        &:nth-child(1) {
+          font-weight: bold;
+          text-align: left;
+        }
+
+        &:nth-child(2) {
+          text-align: right;
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  .days-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 1rem;
+    background-color: #303445;
+    width: auto;
+    height: auto;
+    margin: auto;
+  }
+}
