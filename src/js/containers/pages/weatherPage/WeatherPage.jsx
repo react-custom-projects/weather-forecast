@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+//lodash
+import { isEmpty } from 'lodash';
 //styles
 import styles from './WeatherPage.scss';
 //actions
-import { setCurrentCityWeatherData } from '../../../store/app/actions/AppActions';
+import { fetchCurrentCityWeatherData } from '../../../store/app/actions/AppActions';
 //selectors
-import { getAppIsFetching } from '../../../store/app/selectors/AppSelectors';
+import { getAppCityData, getAppIsFetching } from '../../../store/app/selectors/AppSelectors';
 //custom hooks
 import useBoolean from '../../../customHooks/UseBoolean';
 //constants
@@ -24,23 +26,24 @@ const WeatherPage = ({
 }) => {
 	const dispatch = useDispatch(),
 		[isDetails, setIsDetails] = useBoolean(false),
+		cityData = useSelector((state) => getAppCityData({ state })),
 		isFetching = useSelector((state) => getAppIsFetching({ state }));
 
 	useEffect(() => {
 		if (search) {
 			const params = convertQueryStringIntoObject(search);
-			dispatch(setCurrentCityWeatherData(params.city));
+			dispatch(fetchCurrentCityWeatherData(params.city));
 		} else {
-			dispatch(setCurrentCityWeatherData('berlin'));
+			dispatch(fetchCurrentCityWeatherData('berlin'));
 		}
 	}, [dispatch, search]);
 
 	return (
 		<div className="container" style={{ textAlign: 'center' }}>
 			<SearchInput />
-			{isFetching ? (
-				<LoadingIcon />
-			) : (
+			{isFetching && <LoadingIcon />}
+			{!isFetching && isEmpty(cityData) && <span>No data found. Try using the search.</span>}
+			{!isEmpty(cityData) && (
 				<>
 					{isDetails ? <CityWeatherDetails /> : <CityOverview />}
 					<span className={styles.seeMore} onClick={setIsDetails.toggle}>
