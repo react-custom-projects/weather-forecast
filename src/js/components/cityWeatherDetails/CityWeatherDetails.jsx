@@ -21,18 +21,20 @@ const CityWeatherDetails = () => {
 				{todayData.weekDay} {todayData.todayDate}
 			</p>
 			<table className={styles.weatherData} cellPadding="4">
-				<tr>
-					<td>Feels lik:</td>
-					<td>{todayData.feelsLike} %</td>
-				</tr>
-				<tr>
-					<td>Humidity:</td>
-					<td>{todayData.humidity} %</td>
-				</tr>
-				<tr>
-					<td>Wind:</td>
-					<td>{todayData.wind} km/h</td>
-				</tr>
+				<tbody>
+					<tr>
+						<td>Feels lik:</td>
+						<td>{todayData.feelsLike} %</td>
+					</tr>
+					<tr>
+						<td>Humidity:</td>
+						<td>{todayData.humidity} %</td>
+					</tr>
+					<tr>
+						<td>Wind:</td>
+						<td>{todayData.wind} km/h</td>
+					</tr>
+				</tbody>
 			</table>
 
 			<div className={styles.daysWrapper}>
