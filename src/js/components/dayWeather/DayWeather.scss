@@ -7,12 +7,18 @@
   background-color: #303445;
   transition: background-color 300ms ease;
 
-  &:hover {
+  &.active, &:hover {
     background-color: whitesmoke;
     color: #303445;
     border-radius: 1rem;
     cursor: pointer;
 
+    .icon {
+      filter: invert(1);
+    }
+  }
+
+  &:hover {
     .icon {
       filter: invert(1);
     }

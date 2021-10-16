@@ -9,10 +9,12 @@ import DayWeather from '../dayWeather/DayWeather';
 
 const CityWeatherDetails = () => {
 	const cityData = useSelector((state) => getAppCityData({ state })),
+		[activeIndex, setActiveIndex] = useState(0),
 		[todayData, setTodayData] = useState(cityData.days[0]);
 
 	const getRequiredDayData = (i) => {
-		setTodayData(cityData.days[i]);
+		setActiveIndex(i);
+		setTodayData(cityData.days[activeIndex]);
 	};
 
 	return (
@@ -39,7 +41,13 @@ const CityWeatherDetails = () => {
 
 			<div className={styles.daysWrapper}>
 				{cityData.days.map((el, i) => (
-					<DayWeather key={i} dayData={el} click={getRequiredDayData} index={i} />
+					<DayWeather
+						key={i}
+						dayData={el}
+						click={getRequiredDayData}
+						index={i}
+						activeIndex={activeIndex}
+					/>
 				))}
 			</div>
 		</div>

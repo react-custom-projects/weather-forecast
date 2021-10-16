@@ -2,8 +2,11 @@ import React from 'react';
 //styles
 import styles from './DayWeather.scss';
 
-const DayWeather = ({ dayData, click, index }) => (
-	<div className={styles.day} onClick={() => click(index)}>
+const DayWeather = ({ dayData, click, index, activeIndex }) => (
+	<div
+		className={`${styles.day} ${index === activeIndex ? styles.active : ''}`}
+		onClick={() => click(index)}
+	>
 		<img
 			src={`https://openweathermap.org/img/wn/${dayData.icon}.png`}
 			alt=""
