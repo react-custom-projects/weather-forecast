@@ -12,7 +12,7 @@ export const constructDayWeatherData = (daydata) => {
 	const weather = daydata.weather[0];
 
 	return {
-		weekDay: format(new Date(daydata.dt_txt), 'EEEE').substring(0, 3),
+		weekDay: format(new Date(daydata.dt_txt), 'EEEE'),
 		todayDate: format(new Date(daydata.dt_txt), 'dd/MM'),
 		icon: weather.icon,
 		temp: Math.round(daydata.main.temp),
