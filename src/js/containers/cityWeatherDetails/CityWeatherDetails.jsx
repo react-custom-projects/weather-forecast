@@ -14,7 +14,7 @@ const CityWeatherDetails = () => {
 
 	const getRequiredDayData = (i) => {
 		setActiveIndex(i);
-		setTodayData(cityData.days[activeIndex]);
+		setTodayData(cityData.days[i]);
 	};
 
 	return (
@@ -26,7 +26,7 @@ const CityWeatherDetails = () => {
 				<tbody>
 					<tr>
 						<td>Feels lik:</td>
-						<td>{todayData.feelsLike} %</td>
+						<td>{todayData.feelsLike}°C</td>
 					</tr>
 					<tr>
 						<td>Humidity:</td>
