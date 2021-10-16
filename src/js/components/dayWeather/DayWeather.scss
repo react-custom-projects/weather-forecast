@@ -1,15 +1,17 @@
+@import "../../../scss/generic/variables";
+
 .day {
   padding: 0.2rem;
   border-radius: 1rem;
   padding-top: 1rem;
   flex-direction: column;
   text-align: center;
-  background-color: #303445;
+  background-color: $grey;
   transition: background-color 300ms ease;
 
   &.active, &:hover {
-    background-color: whitesmoke;
-    color: #303445;
+    background-color: $smoked-white;
+    color: $grey;
     border-radius: 1rem;
     cursor: pointer;
 

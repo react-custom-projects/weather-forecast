@@ -1,9 +1,11 @@
+@import "../../../../scss/generic/variables";
+
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #007aff;
-  color: #fff;
+  background-color: $blue;
+  color: $white;
   font-size: 100%;
   line-height: 1.5;
   height: 100%;
@@ -24,18 +26,18 @@
 
   .go-back {
     font-weight: 300;
-    color: #fff;
+    color: $white;
     text-decoration: none;
-    border: 1px solid #efefef;
+    border: 1px solid $smoked-white;
     padding: .5rem;
     border-radius: 3px;
     transition: all .3s linear;
     font-size: 1.2rem;
 
     &:hover {
-      border: 1px solid #007aff;
-      background-color: #ffffff;
-      color: #007aff;
+      border: 1px solid $blue;
+      background-color: $white;
+      color: $blue;
     }
   }
 }

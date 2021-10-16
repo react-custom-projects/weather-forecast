@@ -1,3 +1,5 @@
+@import "../../../scss/generic/variables";
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -10,13 +12,13 @@
   height: 430px;
   padding: 0.5rem;
   position: relative;
-  box-shadow: 3px 3px 20px rgba(0,0,0,0.7);
-  color: white;
+  box-shadow: 3px 3px 20px rgba($black,0.7);
+  color: $white;
 
   &::after {
     content:"";
     border-radius: 25px;
-    background-color: #252836;
+    background-color: $grey2;
     opacity: 0.92;
     top: 0;
     left: 0;
@@ -51,7 +53,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     border-radius: 1rem;
-    background-color: #303445;
+    background-color: $grey;
     width: auto;
     height: auto;
     margin: auto;
