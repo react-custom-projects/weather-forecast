@@ -1,7 +1,9 @@
 import React from 'react';
+//styles
+import styles from './LoadingIcon.scss';
 
 const LoadingIcon = () => (
-	<div className="lds-ring">
+	<div className={styles.ldsRing}>
 		<div />
 		<div />
 		<div />
