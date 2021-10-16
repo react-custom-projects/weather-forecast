@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 //toast
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,14 +14,16 @@ import configureStore from './js/store/configureStore';
 import App from './App';
 //styles
 import './scss/global.scss';
+//constants
+import { history } from './js/constants/Constants';
 
 const store = configureStore();
 
 ReactDOM.render(
 	<Provider store={store}>
-		<BrowserRouter>
+		<Router history={history}>
 			<App />
-		</BrowserRouter>
+		</Router>
 	</Provider>,
 	document.getElementById('root')
 );
