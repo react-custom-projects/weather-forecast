@@ -11,10 +11,12 @@
   padding: 0.5rem;
   position: relative;
   box-shadow: 3px 3px 20px rgba(0,0,0,0.7);
+  color: white;
 
   &::after {
     content:"";
     border-radius: 25px;
+    background-color: #252836;
     opacity: 0.92;
     top: 0;
     left: 0;
