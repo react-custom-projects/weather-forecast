@@ -9,7 +9,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import ErrorBoundaryFallback from './js/generic/ErrorBoundaryFallback';
 //components
 import LoadingIcon from './js/components/shared/loadingIcon/LoadingIcon';
-const WeatherPage = lazy(() => import('./js/containers/pages/WeatherPage'));
+const WeatherPage = lazy(() => import('./js/containers/pages/weatherPage/WeatherPage'));
 
 const App = () => (
 	<ErrorBoundary
